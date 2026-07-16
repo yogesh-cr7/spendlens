@@ -1,0 +1,16 @@
+# python
+__pycache__/
+*.pyc
+venv/
+.pytest_cache/
+*.egg-info/
+
+# secrets
+.env
+
+# real bank data stays local, only sample data gets committed
+data/private/
+
+# editor
+.vscode/
+.idea/
