@@ -6,7 +6,10 @@ and (eventually) ask questions about where your money went in plain English.
 Started this because my bank's app is useless for actually understanding
 spending patterns across months.
 
-Work in progress. Rough plan:
+Work in progress. 
+
+
+Rough plan:
 
 - [ ] parse bank statement CSVs (different banks = different formats, fun)
 - [ ] rule-based categorization to start
