@@ -10,7 +10,7 @@ CATEGORY_RULES = {
     "rent": ("rent",),
     "food delivery": ("swiggy", "zomato"),
     "groceries": ("bigbasket", "blinkit", "grofers", "dmart", "groceries"),
-    "transport": ("uber", "ola", "petrol", "fuel", "metro"),
+    "transport": ("uber", "ola", "petrol", "fuel", "metro", "irctc", "rapido"),
     "shopping": ("amazon", "flipkart", "myntra"),
     "entertainment": ("netflix", "spotify", "prime video", "pvr", "movie", "bookmyshow"),
     "utilities": ("electricity", "bescom", "water bill", "broadband", "recharge", "jio", "airtel"),

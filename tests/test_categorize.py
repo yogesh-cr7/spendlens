@@ -12,6 +12,9 @@ def test_basic_matches():
     assert categorize("SALARY CREDIT ACME CORP") == "income"
     assert categorize("NETFLIX SUBSCRIPTION") == "entertainment"
 
+def test_travel_bookings():
+    assert categorize("IRCTC TICKET BOOKING") == "transport"
+    assert categorize("UPI-RAPIDO-RIDE") == "transport"
 
 def test_matching_is_case_insensitive():
     assert categorize("netflix") == categorize("NETFLIX")
