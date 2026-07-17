@@ -11,8 +11,8 @@ Work in progress.
 
 Rough plan:
 
-- [ ] parse bank statement CSVs (different banks = different formats, fun)
-- [ ] rule-based categorization to start
+- [x] parse bank statement CSVs (different banks = different formats, fun)
+- [x] rule-based categorization to start
 - [ ] LLM categorization for the messy stuff rules can't handle
 - [ ] anomaly detection (subscriptions creeping up, duplicate charges)
 - [ ] agent that answers questions like "why was March so expensive?"
@@ -23,4 +23,21 @@ Rough plan:
 python -m venv venv
 venv\Scripts\activate      # windows
 pip install -r requirements.txt
+```
+
+## Usage
+
+```
+python -m spendlens data/samples/sample_statement.csv
+```
+
+Prints a spending summary by category:
+
+```
+spending by category (15 transactions)
+
+  rent               15,000.00   58.9%
+  shopping            2,499.00    9.8%
+  groceries           1,820.00    7.1%
+  ...
 ```
