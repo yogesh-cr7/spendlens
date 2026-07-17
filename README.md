@@ -36,8 +36,8 @@ Prints a spending summary by category:
 ```
 spending by category (15 transactions)
 
-  rent               15,000.00   58.9%
-  shopping            2,499.00    9.8%
-  groceries           1,820.00    7.1%
+  rent                1,800.00   74.3%
+  utilities             164.30    6.8%
+  shopping              129.99    5.4%
   ...
 ```

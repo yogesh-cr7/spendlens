@@ -7,14 +7,19 @@ SAMPLES = Path(__file__).parent.parent / "data" / "samples"
 
 
 def test_basic_matches():
-    assert categorize("UPI-SWIGGY-ORDER") == "food delivery"
-    assert categorize("RENT TRANSFER") == "rent"
-    assert categorize("SALARY CREDIT ACME CORP") == "income"
-    assert categorize("NETFLIX SUBSCRIPTION") == "entertainment"
+    assert categorize("DOORDASH ORDER") == "food delivery"
+    assert categorize("ZELLE RENT PAYMENT") == "rent"
+    assert categorize("PAYROLL DEPOSIT ACME CORP") == "income"
+    assert categorize("NETFLIX.COM") == "entertainment"
 
 def test_travel_bookings():
-    assert categorize("IRCTC TICKET BOOKING") == "transport"
-    assert categorize("UPI-RAPIDO-RIDE") == "transport"
+    assert categorize("LYFT RIDE 05-07") == "transport"
+    assert categorize("AMTRAK TICKETS") == "transport"
+
+def test_uber_eats_is_food_not_transport():
+    # "uber eats" contains "uber", so rule order decides this one
+    assert categorize("UBER EATS") == "food delivery"
+    assert categorize("UBER TRIP") == "transport"
 
 def test_matching_is_case_insensitive():
     assert categorize("netflix") == categorize("NETFLIX")

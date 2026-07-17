@@ -11,7 +11,7 @@ SAMPLES = Path(__file__).parent.parent / "data" / "samples"
 def test_loads_sample_statement():
     txns = load_transactions(SAMPLES / "sample_statement.csv")
     assert len(txns) == 15
-    assert txns[0] == Transaction(date(2026, 5, 1), "SALARY CREDIT ACME CORP", 52000.0)
+    assert txns[0] == Transaction(date(2026, 5, 1), "PAYROLL DEPOSIT ACME CORP", 4850.0)
 
 
 def test_amounts_keep_their_sign():

@@ -5,16 +5,18 @@ Dumb but effective first pass. Anything the rules don't recognise gets
 growing this keyword list forever.
 """
 
+# order matters: "uber eats" must be checked before "uber" catches it
+# as transport, so food delivery sits above transport
 CATEGORY_RULES = {
-    "income": ("salary",),
+    "income": ("payroll", "salary", "direct deposit"),
     "rent": ("rent",),
-    "food delivery": ("swiggy", "zomato"),
-    "groceries": ("bigbasket", "blinkit", "grofers", "dmart", "groceries"),
-    "transport": ("uber", "ola", "petrol", "fuel", "metro", "irctc", "rapido"),
-    "shopping": ("amazon", "flipkart", "myntra"),
-    "entertainment": ("netflix", "spotify", "prime video", "pvr", "movie", "bookmyshow"),
-    "utilities": ("electricity", "bescom", "water bill", "broadband", "recharge", "jio", "airtel"),
-    "health": ("pharmacy", "apollo", "hospital", "clinic"),
+    "food delivery": ("doordash", "grubhub", "uber eats", "postmates"),
+    "groceries": ("trader joe", "whole foods", "safeway", "kroger", "costco", "aldi"),
+    "transport": ("uber", "lyft", "amtrak", "mta", "gas station", "shell", "chevron", "exxon"),
+    "shopping": ("amazon", "target", "walmart", "best buy"),
+    "entertainment": ("netflix", "spotify", "hulu", "amc", "regal", "movie"),
+    "utilities": ("con edison", "coned", "electric", "t-mobile", "verizon", "comcast", "internet"),
+    "health": ("cvs", "walgreens", "pharmacy", "clinic", "hospital"),
 }
 
 UNCATEGORISED = "uncategorised"
