@@ -31,6 +31,7 @@ class Transaction:
     date: date
     description: str
     amount: float  # negative = money out, positive = money in
+    category: str | None = None  # filled in by categorize.py
 
 
 def _parse_date(raw):
