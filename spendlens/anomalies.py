@@ -48,7 +48,11 @@ def find_duplicate_charges(transactions, window_days=3):
 
 def find_price_increases(transactions, threshold=0.10):
     """Flag recurring charges that rose by more than `threshold` (10% default)
-    from their previous occurrence."""
+    from their previous occurrence.
+
+    10% is a guess - low enough to catch real hikes, high enough to ignore
+    normal price noise. could expose this as a cli flag later.
+    """
     by_description = defaultdict(list)
     for t in transactions:
         if t.amount < 0:
