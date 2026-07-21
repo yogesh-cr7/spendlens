@@ -1,11 +1,13 @@
 """CLI entry point: python -m spendlens <statement.csv>
 
-Prints a spending summary by category.
+Prints a spending summary by category, plus anything worth a second look
+(duplicate charges, subscriptions that got more expensive).
 """
 
 import argparse
 from collections import defaultdict
 
+from .anomalies import find_anomalies
 from .categorize import categorize_transactions
 from .parser import load_transactions
 
@@ -29,6 +31,12 @@ def main():
         print(f"  {category:<15} {amount:>12,.2f}   {pct:4.1f}%")
     print(f"  {'-' * 35}")
     print(f"  {'total':<15} {total_spend:>12,.2f}")
+
+    anomalies = find_anomalies(txns)
+    if anomalies:
+        print(f"\nworth a look ({len(anomalies)}):\n")
+        for a in anomalies:
+            print(f"  [{a.kind}] {a.message}")
 
 
 if __name__ == "__main__":
